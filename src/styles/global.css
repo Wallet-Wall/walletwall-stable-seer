@@ -1,0 +1,88 @@
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--ww-cream);
+  color: var(--ww-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  color: var(--ww-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ww-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--ww-accent);
+}
+
+.ww-card {
+  background: var(--ww-card-bg);
+  border: 1px solid var(--ww-card-border);
+  border-radius: var(--ww-radius-panel);
+  padding: 16px;
+}
+
+.ww-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--ww-radius-badge);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.ww-badge--safe {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--ww-safe-dark);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.ww-badge--warn {
+  background: rgba(201, 164, 122, 0.18);
+  color: var(--ww-warn-dark);
+  border: 1px solid rgba(201, 164, 122, 0.38);
+}
+
+.ww-badge--risk {
+  background: rgba(191, 78, 50, 0.1);
+  color: var(--ww-risk-dark);
+  border: 1px solid rgba(191, 78, 50, 0.28);
+}
+
+.ww-scroll {
+  overflow-y: auto;
+  height: 100%;
+}

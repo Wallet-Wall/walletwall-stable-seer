@@ -1,0 +1,58 @@
+:root {
+  /* Brand core */
+  --ww-cream: #FAF8F3;
+  --ww-surface: #FFFDF8;
+  --ww-card-bg: rgba(255, 252, 246, 0.82);
+  --ww-card-border: rgba(139, 49, 32, 0.16);
+  --ww-inner-border: rgba(30, 26, 20, 0.07);
+  --ww-panel-bg: rgba(255, 252, 246, 0.88);
+
+  /* Ink / text */
+  --ww-ink: rgba(30, 26, 20, 0.88);
+  --ww-ink-muted: rgba(30, 26, 20, 0.48);
+  --ww-ink-subtle: rgba(30, 26, 20, 0.34);
+
+  /* Accent */
+  --ww-accent: #BF4E32;
+  --ww-accent-dark: #8B3120;
+  --ww-tan: #C9A47A;
+
+  /* Charcoal structural */
+  --ww-charcoal: rgba(30, 26, 20, 1);
+  --ww-charcoal-soft: rgba(30, 26, 20, 0.72);
+  --ww-charcoal-border: rgba(30, 26, 20, 0.22);
+  --ww-charcoal-rail: rgba(30, 26, 20, 0.28);
+  --ww-charcoal-panel: rgba(30, 26, 20, 0.05);
+
+  /* Brick material */
+  --ww-brick-hi: #d76745;
+  --ww-brick: #b94a31;
+  --ww-brick-low: #76281d;
+  --ww-stone: #e9d3ad;
+  --ww-mortar: #f5ead4;
+
+  /* Status */
+  --ww-safe: #22C55E;
+  --ww-safe-dark: #1E653C;
+  --ww-warn: #C9A47A;
+  --ww-warn-dark: #8B6D3E;
+  --ww-risk: #BF4E32;
+  --ww-risk-dark: #8B3120;
+  --ww-blush: #E8A090;
+
+  /* Node category */
+  --ww-node-token: #B88A4A;
+  --ww-node-defi: #D4705A;
+  --ww-node-nft: #2F8F67;
+  --ww-node-wallet: #BF4E32;
+  --ww-node-exchange: #5B7EA6;
+  --ww-node-protocol: #7A6B9E;
+
+  /* Radii */
+  --ww-radius-panel: 2px;
+  --ww-radius-control: 1px;
+  --ww-radius-badge: 1px;
+
+  /* Focus */
+  --ww-focus: 0 0 0 3px rgba(191, 78, 50, 0.18);
+}

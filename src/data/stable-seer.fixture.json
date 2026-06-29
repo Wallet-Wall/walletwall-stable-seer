@@ -1,0 +1,125 @@
+{
+  "_note": "DEMO DATA ONLY — synthetic fixture, not real market data. Do not rely on any values here for financial decisions.",
+  "as_of": "2024-01-15T00:00:00Z",
+  "coins": [
+    {
+      "id": "demo-usdc",
+      "symbol": "USDC",
+      "name": "USD Coin (demo)",
+      "peg_status": "ok",
+      "peg_deviation_pct": 0.01,
+      "peg_price_usd": 1.0001,
+      "liquidity_usd": 420000000,
+      "issuer": "Demo Issuer A",
+      "chains": ["Ethereum (demo)", "Polygon (demo)", "Arbitrum (demo)"],
+      "pools": [
+        {
+          "id": "pool-demo-1",
+          "name": "USDC/USDT demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-stable",
+          "liquidity_usd": 210000000,
+          "peg_deviation_pct": 0.01
+        },
+        {
+          "id": "pool-demo-2",
+          "name": "USDC/ETH demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-volatile",
+          "liquidity_usd": 130000000,
+          "peg_deviation_pct": 0.02
+        }
+      ]
+    },
+    {
+      "id": "demo-usdt",
+      "symbol": "USDT",
+      "name": "Tether USD (demo)",
+      "peg_status": "ok",
+      "peg_deviation_pct": 0.02,
+      "peg_price_usd": 1.0002,
+      "liquidity_usd": 380000000,
+      "issuer": "Demo Issuer B",
+      "chains": ["Ethereum (demo)", "BSC (demo)"],
+      "pools": [
+        {
+          "id": "pool-demo-3",
+          "name": "USDT/USDC demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-stable",
+          "liquidity_usd": 190000000,
+          "peg_deviation_pct": 0.02
+        }
+      ]
+    },
+    {
+      "id": "demo-dai",
+      "symbol": "DAI",
+      "name": "Dai (demo)",
+      "peg_status": "watch",
+      "peg_deviation_pct": 0.18,
+      "peg_price_usd": 0.9982,
+      "liquidity_usd": 95000000,
+      "issuer": "Demo Protocol C",
+      "chains": ["Ethereum (demo)"],
+      "pools": [
+        {
+          "id": "pool-demo-4",
+          "name": "DAI/USDC demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-stable",
+          "liquidity_usd": 55000000,
+          "peg_deviation_pct": 0.18
+        }
+      ]
+    },
+    {
+      "id": "demo-frax",
+      "symbol": "FRAX",
+      "name": "Frax (demo)",
+      "peg_status": "watch",
+      "peg_deviation_pct": 0.24,
+      "peg_price_usd": 0.9976,
+      "liquidity_usd": 48000000,
+      "issuer": "Demo Protocol D",
+      "chains": ["Ethereum (demo)", "Arbitrum (demo)"],
+      "pools": [
+        {
+          "id": "pool-demo-5",
+          "name": "FRAX/USDC demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-stable",
+          "liquidity_usd": 28000000,
+          "peg_deviation_pct": 0.24
+        }
+      ]
+    },
+    {
+      "id": "demo-lusd",
+      "symbol": "LUSD",
+      "name": "Liquity USD (demo)",
+      "peg_status": "alert",
+      "peg_deviation_pct": 1.42,
+      "peg_price_usd": 1.0142,
+      "liquidity_usd": 22000000,
+      "issuer": "Demo Protocol E",
+      "chains": ["Ethereum (demo)"],
+      "pools": [
+        {
+          "id": "pool-demo-6",
+          "name": "LUSD/USDC demo pool",
+          "dex": "DemoSwap",
+          "chain": "Ethereum (demo)",
+          "type": "stable-stable",
+          "liquidity_usd": 12000000,
+          "peg_deviation_pct": 1.42
+        }
+      ]
+    }
+  ]
+}
