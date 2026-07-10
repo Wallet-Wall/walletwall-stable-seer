@@ -1,11 +1,19 @@
 import { useState, useMemo } from 'react';
 import fixture from './data/stable-seer.fixture.json';
 import Disclaimer from './components/Disclaimer.jsx';
+import { classifyPegStatus } from './lib/peg-status.js';
 import './StableSeer.css';
 
-function getPegMeta(status) {
+// Peg status is derived from peg_deviation_pct + is_soft_peg rather than trusted
+// blindly off the fixture's peg_status field, so the two can never quietly drift
+// out of sync (see docs/DATA_FIXTURES.md for the soft-peg tolerance concept).
+function getEffectivePegStatus(coin) {
+  return classifyPegStatus(coin.peg_deviation_pct, Boolean(coin.is_soft_peg));
+}
+
+function getPegMeta(status, isSoftPeg) {
   switch (status) {
-    case 'ok':    return { label: 'On Peg', cls: 'ww-badge--safe', dot: '#22C55E' };
+    case 'ok':    return { label: isSoftPeg ? 'Soft Peg OK' : 'On Peg', cls: 'ww-badge--safe', dot: '#22C55E' };
     case 'watch': return { label: 'Watch',  cls: 'ww-badge--warn', dot: '#C9A47A' };
     case 'alert': return { label: 'Depeg',  cls: 'ww-badge--risk', dot: '#BF4E32' };
     default:      return { label: 'On Peg', cls: 'ww-badge--safe', dot: '#22C55E' };
@@ -20,7 +28,7 @@ function fmtLiquidity(v) {
 }
 
 function CoinRow({ coin, isSelected, onSelect }) {
-  const meta = getPegMeta(coin.peg_status);
+  const meta = getPegMeta(getEffectivePegStatus(coin), coin.is_soft_peg);
   return (
     <button
       className={`ss-coin-row${isSelected ? ' ss-coin-row--selected' : ''}`}
@@ -45,7 +53,7 @@ function CoinRow({ coin, isSelected, onSelect }) {
 
 function CoinDetail({ coin, onClose }) {
   if (!coin) return null;
-  const meta = getPegMeta(coin.peg_status);
+  const meta = getPegMeta(getEffectivePegStatus(coin), coin.is_soft_peg);
 
   return (
     <div className="ss-detail" data-testid="coin-detail">
@@ -79,6 +87,15 @@ function CoinDetail({ coin, onClose }) {
           <div className="ss-kpi__value">{fmtLiquidity(coin.liquidity_usd)}</div>
         </div>
       </div>
+
+      {coin.is_soft_peg && (
+        <p className="ss-soft-peg-note">
+          Soft-pegged: this demo treats algorithmic / partially-collateralized stablecoins as
+          normally trading in a wider band around $1.00, so this snapshot's deviation reads as
+          on-peg rather than a watch. See <code>docs/DATA_FIXTURES.md</code> for the simplified
+          concept this demo uses — it is not a live depeg risk signal.
+        </p>
+      )}
 
       <div className="ww-label" style={{ marginTop: 20, marginBottom: 10 }}>Chains</div>
       <div className="ss-detail__chains">
