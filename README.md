@@ -2,7 +2,7 @@
 
 Stable Seer is a read-only stablecoin peg monitor. Enter a search query to filter stablecoins by symbol, name, or issuer. Click any coin to see peg price, deviation, total liquidity, pool breakdown, and chain coverage — all from a single focused surface.
 
-Stable Seer is part of the [WalletWall](https://walletwall.org) analytics suite.
+Stable Seer is part of the WalletWall organization's public research and demonstration surface — a conceptual, read-only preview of the peg-monitoring surface in the [WalletWall](https://walletwall.org) analytics suite, not the complete production application. It runs on static fixture data as documented below; production behavior is not represented here unless explicitly documented.
 
 > **No wallet connection required.** Stable Seer never asks for private keys, seed phrases, or transaction signatures. All data is read-only from static fixture data unless wired by the user to their own read-only source.
 

@@ -41,4 +41,23 @@ describe('Stable Seer', () => {
     render(<StableSeer />);
     expect(screen.getByTestId('disclaimer')).toBeInTheDocument();
   });
+
+  it('labels the soft-pegged demo coin (FRAX) "Soft Peg OK" rather than "Watch"', () => {
+    render(<StableSeer />);
+    fireEvent.click(screen.getByText('FRAX'));
+    const detail = screen.getByTestId('coin-detail');
+    expect(detail).toHaveTextContent('Soft Peg OK');
+    expect(detail).not.toHaveTextContent('Watch');
+  });
+
+  it('shows a soft-peg explanatory note only for the soft-pegged coin', () => {
+    render(<StableSeer />);
+    fireEvent.click(screen.getByText('FRAX'));
+    expect(screen.getByTestId('coin-detail')).toHaveTextContent(/soft-pegged/i);
+
+    // Switch straight to a hard-pegged coin (no need to deselect first — selecting
+    // a different coin replaces the current selection).
+    fireEvent.click(screen.getAllByText('USDC')[0]);
+    expect(screen.getByTestId('coin-detail')).not.toHaveTextContent(/soft-pegged/i);
+  });
 });

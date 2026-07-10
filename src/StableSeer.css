@@ -225,6 +225,21 @@
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
 
+.ss-soft-peg-note {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--ww-ink-muted);
+  background: var(--ww-card-bg);
+  border: 1px solid var(--ww-card-border);
+  border-radius: var(--ww-radius-panel);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.ss-soft-peg-note code {
+  font-size: 10px;
+}
+
 .ss-detail__chains {
   display: flex;
   flex-wrap: wrap;
