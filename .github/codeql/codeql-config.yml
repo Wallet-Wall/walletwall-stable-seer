@@ -1,0 +1,9 @@
+name: WalletWall CodeQL configuration
+
+queries:
+  - uses: security-extended
+
+paths-ignore:
+  - coverage/**
+  - dist/**
+  - node_modules/**
